@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block main %}
+
+    <h1> Book Info </h1>
+<div class="card" style="width: 18rem;">
+
+  <img src="{{book.image_url}}"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{book.title}}</h5>
+    <p class="card-text">{{book.description}}</p>
+    <p class="card-text">{{book.num_pages}}</p>
+
+    <form action="{{book.delete_url}}" method="post">
+      <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+
+    <a href="{{ url_for('book.landing')}}" class="btn btn-primary">Back to all Books</a>
+  </div>
+</div>
+
+{% endblock %}

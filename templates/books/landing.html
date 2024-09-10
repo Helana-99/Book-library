@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1> All Students </h1>
+    <table class="table">
+        <tr>
+            <th> TITLE</th>
+            <th> DESCRIPTION </th>
+            <th> COVER</th>
+            <td> SHOW </td>
+        </tr>
+
+        {% for book in books %}
+            <tr>
+                <td>{{book.title}}</td>
+                <td> {{book.description}}</td>
+                <td> <img src="{{book.image_url}}" width="100" height="100"> </td>
+                <td> <a href="{{book.show_url}}" class="btn btn-info">Show </a> </td>
+
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}
